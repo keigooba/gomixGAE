@@ -1,0 +1,29 @@
+{{template "header"}}
+<h1>メモ・JSONファイル作成</h1>
+<form role="form" action="/memo" method="post">
+  <textarea  class="mt-4" name="memo" rows="4" cols="100" required autofocus></textarea>
+  <button class="btn btn-lg btn-primary btn-block mt-4 mb-4 w-25 mx-auto" type="submit">送信</button>
+</form>
+{{if or .Json .Txt}}
+<div>
+  <h1>作成済みファイル</h1>
+  {{if .Json}}
+  <p>
+    JSONファイル<br>
+    <a class="btn btn-danger" href="/read">JSONファイルをDBに保存</a><br>
+    {{range $key, $value := .Json}}
+    {{$key}} : <a href="/data/json/{{$value}}">{{$value}}</a><br>
+    {{end}}
+  </p>
+  {{end}}
+  {{if .Txt}}
+  <p>
+    TXTファイル<br>
+    {{range $key, $value := .Txt}}
+    {{$key}} : <a href="/data/txt/{{$value}}">{{$value}}</a><br>
+    {{end}}
+  </p>
+  {{end}}
+</div>
+{{end}}
+{{template "footer"}}

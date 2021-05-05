@@ -1,0 +1,21 @@
+{{template "header"}}
+<h1>2進数・16進数変換</h1>
+<form class="form-signin center" role="form" action="/change" method="post">
+  <p>入力数値+19の全ての結果を表示します。</p>
+  <input type="text" name="number" class="form-control" placeholder="数字を入力" required autofocus>
+  {{if .Error}}
+  <p class="pt-2 text-danger text-left font-weight-bold">{{.Error.Number}}</p>
+  {{end}}
+  <br />
+  <button class="btn btn-lg btn-primary btn-block mb-4" type="submit">送信</button>
+</form>
+{{if .Numbers}}
+<div>
+  <h1>結果</h1>
+  {{range .Numbers}}
+  <p>{{.S2}}
+  <br>{{.S16}}</p>
+  {{end}}
+</div>
+{{end}}
+{{template "footer"}}

@@ -1,0 +1,7 @@
+{
+  "port": 8081,
+  "log_file":"log/system_",
+  "static":"doc",
+  "url":"http://localhost:",
+  "up_url":"https://hip-cyclist-310707.df.r.appspot.com:"
+}
