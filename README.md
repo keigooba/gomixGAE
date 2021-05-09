@@ -1,2 +1,2 @@
 # gomixGAE
-GAE+CloudSQL+cloud Storageで作成したGAE専用ソースコード
+GAE+Cloud SQL+cloud Storageで作成したGAE専用ソースコード
